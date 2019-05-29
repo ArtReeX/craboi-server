@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "a4628d61-3627-4a5b-a3bd-b71bbc64a361",
+		"name": "CRABOI REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Production",
+			"item": [
+				{
+					"name": "getExchanges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Developing",
+			"item": []
+		}
+	]
+}

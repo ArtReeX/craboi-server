@@ -1,0 +1,18 @@
+{
+  "server": {
+    "port": 8080
+  },
+  "log": {
+    "appenders": {
+      "app": { "type": "file", "filename": "./logs/app.txt" },
+      "server": { "type": "file", "filename": "./logs/server.txt" },
+      "console": { "type": "console" }
+    },
+    "categories": {
+      "app": { "appenders": ["app", "console"], "level": "trace" },
+      "server": { "appenders": ["server", "console"], "level": "trace" },
+      "another": { "appenders": ["app", "console"], "level": "trace" },
+      "default": { "appenders": ["app", "console"], "level": "trace" }
+    }
+  }
+}
