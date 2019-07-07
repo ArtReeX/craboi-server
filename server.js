@@ -9,7 +9,7 @@ module.exports = (port, log) => {
     app.use(express.json());
     // create middleware for loging
     app.use((req, res, next) => {
-      log.app.trace(
+      log.trace(
         `Входящий запрос типом ${req.method} метода ${req.path}, параметры: ${JSON.stringify(
           req.query,
         )}, данные: ${JSON.stringify(req.body)}.`,

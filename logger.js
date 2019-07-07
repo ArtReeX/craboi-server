@@ -6,6 +6,7 @@ module.exports = (config) => {
     return {
       app: log4js.getLogger('app'),
       server: log4js.getLogger('server'),
+      exchange: log4js.getLogger('exchange'),
     };
   } catch (error) {
     throw new Error(`Ошибка создания логгировщика: ${error.message} `);

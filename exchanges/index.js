@@ -1,5 +1,5 @@
-const Poloniex = require('./Poloniex');
+const Binance = require('./Binance');
 
-module.exports = () => {
-  const poloniex = new Poloniex();
+module.exports = (log) => {
+  const binance = new Binance(log);
 };

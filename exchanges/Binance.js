@@ -7,29 +7,36 @@ const API = {
 };
 
 module.exports = class Poloniex {
-  constructor() {
+  constructor(log) {
+    // set log
+    this.log = log;
+    // create store
+    this.chartData = [];
     // loading chart data
     this.loadChardData();
   }
 
   async loadChardData() {
-    const promises = [];
     API.availableCurrencyPairs.forEach((pair) => {
       API.availablePeriods.forEach((period) => {
-        promises.push(
-          axios.get(API.URL, {
+        axios
+          .get(API.URL, {
             params: {
               currencyPair: pair,
               start: 1546300800,
               end: 1546646400,
               period,
             },
-          }),
-        );
+          })
+          .then(({ data }) => {
+            this.chartData.push({ pair, period, data });
+          })
+          .catch((error) => {
+            this.log.error(
+              `Невозможно загрузить данные Poloniex для пары ${pair}/${period}: ${error.message}.`,
+            );
+          });
       });
     });
-
-    this.chartData = await Promise.all(promises);
-    console.log(JSON.stringify(this.chartData));
   }
 };

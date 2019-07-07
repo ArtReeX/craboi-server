@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Arthur-Lazarenko/craboi-server#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "log4js": "^4.3.0"
   },
